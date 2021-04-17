@@ -1,0 +1,24 @@
+{
+  "name": "maradwaagrisolutionsv2",
+
+  "version": "1.0.0",
+  "description": "Website for a poultry farm",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThisThato/MaradwaAgriSolutions.git"
+  },
+  "author": "Thato Motaung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThisThato/MaradwaAgriSolutions/issues"
+  },
+  "homepage": "https://github.com/ThisThato/MaradwaAgriSolutions#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

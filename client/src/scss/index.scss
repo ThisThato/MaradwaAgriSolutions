@@ -1,0 +1,462 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+@import "config";
+
+body {
+  font-family: $main-font;
+  line-height: 1.5;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Nav Link */
+.nav-link {
+  font-weight: bold;
+  font-size: 14px;
+  color: $primary-color;
+  padding: 20px 0px;
+  margin: 10px 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
+.nav-link:hover {
+  opacity: 5;
+  color: $primary-color;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: $primary-color;
+  width: 0%;
+  bottom: 2px;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+.navbar {
+  position: relative;
+}
+
+#navimage,
+h3 img {
+  position: absolute;
+  left: 25%;
+  top: 15%;
+  margin-left: -50px;
+  display: block;
+  max-height: 250px;
+  max-width: 250px;
+  width: 200px;
+}
+
+/* Carousel */
+.carousel {
+  margin: 0 auto;
+  &-caption {
+    margin-bottom: 10%;
+  }
+
+  h1,
+  p {
+    color: $white-color;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.5rem;
+    margin: 0% 8%;
+  }
+
+  img {
+    width: 100%;
+    height: 55rem;
+    object-fit: cover;
+  }
+}
+
+i {
+  margin: 4px;
+}
+
+.form {
+  margin-top: 3rem;
+}
+
+/* about */
+#about {
+  margin: 13rem 20rem 0 20rem;
+  overflow: hidden;
+  &-text {
+    text-align: left;
+    padding: 2rem;
+  }
+
+  .col {
+    font-weight: 550;
+    font-size: 1rem;
+  }
+}
+
+.card {
+  &-block {
+    margin: 1rem 1rem;
+  }
+  &-body {
+    max-width: 100px;
+  }
+}
+
+#about-text h1,
+.col h1 {
+  font-size: 2.5rem;
+  line-height: 1.4em;
+  font-weight: bold;
+  color: $primary-color;
+  margin-top: 50px;
+  text-align: left;
+}
+
+#about-text p,
+h1 {
+  font-size: 1.25rem;
+  margin: 2rem 0;
+}
+
+// Services && About
+#services,
+.expert-items {
+  .col {
+    background-color: $background-color;
+    font-weight: 550;
+    font-size: 1rem;
+  }
+  .card-block {
+    margin: 4rem 0rem;
+  }
+}
+
+#services {
+  margin: 0 auto;
+  text-align: left;
+  p {
+    line-height: 1.6;
+  }
+  .card-block {
+    line-height: 1.5;
+  }
+}
+
+.col p {
+  font-weight: 550;
+  font-size: 1rem;
+}
+
+// ChooseUs
+.chooseUs {
+  color: $secondary-color;
+  h1 {
+    text-transform: none;
+  }
+  li {
+    margin: 1rem 0rem;
+    font-size: 1rem;
+    font-weight: 500;
+    list-style-type: square;
+  }
+  .btn {
+    margin-top: 3rem;
+  }
+}
+
+#about-text p {
+  color: $secondary-color;
+}
+
+.video-bg {
+  margin: 0 auto;
+  width: 100%;
+  height: 60vh;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#circle {
+  border-radius: 50%;
+  background-color: $background-color;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  opacity: 0;
+  animation: scaleIn 2s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+}
+
+#item i {
+  color: $white-color;
+}
+
+// Tips from experts
+.expert-items {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  width: 150rem;
+  margin: 0rem 20rem;
+
+  .card {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    text-align: left;
+  }
+  .row,
+  p,
+  h2,
+  #card-links {
+    margin: 1rem;
+  }
+
+  #card-links {
+    text-decoration: underline;
+  }
+}
+
+.card-block h2,
+p {
+  color: rgb(8, 83, 8);
+  line-height: 1.2;
+}
+
+// need help secion
+.expert {
+  &-list {
+    li {
+      list-style: none;
+      i {
+        margin-right: 18px;
+      }
+    }
+  }
+
+  &-items h2 {
+    margin: 4rem 0rem 1rem 1rem;
+  }
+}
+
+.expert-list,
+.chooseUs p {
+  font-size: 18px;
+}
+
+.footer {
+  text-align: center;
+  font-weight: 400;
+  h3,
+  i {
+    color: $secondary-color;
+  }
+  i {
+    margin: 1rem;
+  }
+
+  .col-md-4 h3 {
+    margin: 0.5rem -2rem 0rem 0rem;
+  }
+}
+
+.footer li,
+.footer p {
+  font-size: 15px;
+}
+
+.footer-links {
+  margin-top: 7rem;
+}
+
+.footer-img {
+  margin: 0 auto;
+  margin-top: -7rem;
+}
+/* Carousel Animations */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5, 0.5);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(2.5, 2.5);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  * {
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar-brand {
+    #navimage {
+      width: 25%;
+      top: 2%;
+      position: fixed;
+    }
+  }
+
+  .carousel {
+    height: 500px;
+    position: relative;
+
+    img {
+      height: 540px;
+    }
+    &-item {
+      margin: 0 auto;
+      div {
+        margin: 2rem 0;
+      }
+    }
+
+    &-caption {
+      margin-top: 50px;
+
+      h1 {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 0.9rem;
+        margin: 0 auto;
+      }
+
+      .btn {
+        min-width: 10%;
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+    }
+  }
+
+  #about {
+    margin: 4rem 3rem 0;
+    overflow: hidden;
+    text-align: center;
+
+    #about-text p {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-top: 0.8rem;
+    }
+
+    #about-text h1 {
+      text-align: center;
+      margin-top: -1rem;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      align-items: center;
+      min-width: 10%;
+      font-size: 12px;
+      padding: 5px 10px;
+      margin: 0 4rem;
+    }
+
+    img {
+      width: 100%;
+    }
+    .col {
+      font-size: 0.5rem;
+    }
+  }
+
+  #services {
+    h1,
+    h2 {
+      margin-top: -1rem;
+      font-size: 1.1rem;
+    }
+    .card {
+      margin: -3rem 1rem 2rem 1rem;
+      padding: 1.5rem;
+    }
+  }
+
+  .chooseUs {
+    margin: -7rem 5rem 0 -3rem;
+    #lg-heading {
+      text-align: center;
+      margin-top: -1rem;
+      font-size: 2rem;
+    }
+    .btn {
+      margin: 0rem 8rem;
+      padding: 8px 20px;
+    }
+  }
+
+  .row {
+    .col-auto img {
+      width: 100%;
+      align-items: center;
+    }
+  }
+}
