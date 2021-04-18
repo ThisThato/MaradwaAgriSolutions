@@ -43,6 +43,11 @@ const inventorySchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    taxPrice: {
+      type: Number,
+      required: true,
+      default: 0.0,
+    },
     unitPrice: {
       type: Number,
       required: true,
@@ -62,6 +67,26 @@ const inventorySchema = mongoose.Schema(
       type: Number,
       required: true,
       default: 0,
+    },
+    paymentMethod: {
+      type: String,
+      required: true,
+    },
+    isPaid: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    paidAt: {
+      type: Date,
+    },
+    isDelivered: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    deliveredAt: {
+      type: Date,
     },
   },
   {
