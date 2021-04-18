@@ -26,7 +26,6 @@ const InventoryList = () => {
                 <th>ID</th>
                 <th>Type (Dr/Cr)</th>
                 <th>Date</th>
-                <th>Category</th>
                 <th> Description</th>
                 <th>Amount</th>
               </tr>

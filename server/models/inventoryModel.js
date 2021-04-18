@@ -1,26 +1,59 @@
 import mongoose from "mongoose";
 
-const inventorySchema = mongoose.Schema(
+const customerSchema = mongoose.Schema(
   {
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "User",
-    },
-    type: {
+    name: {
       type: String,
       required: true,
+    },
+    company: {
+      type: String,
+      required: false,
+    },
+    physicalAddress: {
+      address: { type: String, required: true },
+      city: { type: String, required: true },
+      postalCode: { type: String, required: true },
+      country: { type: String, required: true },
+    },
+    contactDetails: {
+      phone: { type: Number, required: false },
+      email: { type: String, required: false },
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+const inventorySchema = mongoose.Schema(
+  {
+    transaction: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "Transaction",
+    },
+    customers: [customerSchema],
+    supplier: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "Supplier",
     },
     description: {
       type: String,
       required: true,
     },
-    amount: {
+    unitPrice: {
       type: Number,
       required: true,
       default: 0,
     },
     qty: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    countInStock: {
       type: Number,
       required: true,
       default: 0,
