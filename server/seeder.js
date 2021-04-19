@@ -46,7 +46,7 @@ const destroyData = async () => {
     await Transaction.deleteMany();
     await Supplier.deleteMany();
 
-    console.log("Data destroyed!".green.inverse);
+    console.log("Data destroyed!".red.inverse);
 
     process.exit(1);
   } catch (error) {
