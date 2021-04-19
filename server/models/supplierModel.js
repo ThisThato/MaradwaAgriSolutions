@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+//Used by inventorySchema
 const supplierSchema = mongoose.Schema(
   {
     name: {
@@ -26,6 +27,6 @@ const supplierSchema = mongoose.Schema(
   }
 );
 
-const Supplier = mongoose.Schema("Supplier", supplierSchema);
+const Supplier = mongoose.model("Supplier", supplierSchema);
 
 export default Supplier;

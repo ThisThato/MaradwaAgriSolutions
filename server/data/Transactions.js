@@ -1,6 +1,5 @@
 const transactions = [
   {
-    _id: "1",
     type: "dr",
     category: "Inventory",
     description: "Bought 100 day olds from Poultek",
@@ -10,7 +9,6 @@ const transactions = [
   },
 
   {
-    _id: "2",
     type: "dr",
     category: "Feeds",
     description: "Bought 50 Kg classic starter feeds from Poultek",
@@ -19,7 +17,6 @@ const transactions = [
     lineTotal: 342,
   },
   {
-    _id: "3",
     type: "cr",
     category: "Sales",
     description: "Sold 5 chickens to Moropa EM",
@@ -28,7 +25,6 @@ const transactions = [
     lineTotal: 325,
   },
   {
-    _id: "4",
     type: "dr",
     category: "Operating Expenses",
     description: "Bought Petrol",
@@ -37,7 +33,6 @@ const transactions = [
     lineTotal: 300,
   },
   {
-    _id: "5",
     type: "cr",
     category: "Sales",
     description: "Sold 10 chickens to Mothiba LM",
@@ -46,7 +41,6 @@ const transactions = [
     lineTotal: 650,
   },
   {
-    _id: "6",
     type: "dr",
     category: "Feeds",
     description: "Bought 50 kg classic grower feeds from Poultek",

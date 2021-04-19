@@ -53,6 +53,11 @@ const inventorySchema = mongoose.Schema(
       required: true,
       default: 0,
     },
+    deliveryPrice: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
     qty: {
       type: Number,
       required: true,
@@ -94,6 +99,6 @@ const inventorySchema = mongoose.Schema(
   }
 );
 
-const Inventory = mongoose.Schema("Inventory", inventorySchema);
+const Inventory = mongoose.model("Inventory", inventorySchema);
 
 export default Inventory;
