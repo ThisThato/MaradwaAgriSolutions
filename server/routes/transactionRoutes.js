@@ -1,28 +1,9 @@
 import express from "express";
-import asyncHandler from "express-async-handler";
-import Transaction from "../models/transactionModel.js";
+import { getTransactionById, getTransactions } from "../controllers/transactionController.js";
 
 const router = express.Router();
 
-router.get(
-  "/",
-  asyncHandler(async (req, res) => {
-    const transactions = await Transaction.find({});
-    res.json(transactions);
-  })
-);
-
-router.get(
-  "/:id",
-  asyncHandler(async (req, res) => {
-    const transaction = await Transaction.findById(req.params.id);
-
-    if (transaction) {
-      res.json(transaction);
-    } else {
-      res.status(404).json({ message: "Transaction not found" });
-    }
-  })
-);
+router.get("/", getTransactions);
+router.get("/:id", getTransactionById);
 
 export default router;
