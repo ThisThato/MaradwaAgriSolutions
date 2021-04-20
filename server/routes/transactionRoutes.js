@@ -20,7 +20,7 @@ router.get(
     if (transaction) {
       res.json(transaction);
     } else {
-      res.status(404).json({ message: "Product not found" });
+      res.status(404).json({ message: "Transaction not found" });
     }
   })
 );
