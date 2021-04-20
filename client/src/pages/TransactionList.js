@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Table, Row, Col, Button, ProgressBar } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { Table, Row, Col, Button, ProgressBar, Spinner } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
-// import transactions from "../Transactions";
+import { listTransactions } from "../actions/transactionActions";
+import Loader from "../components/Loader";
 
 const TransactionList = () => {
-  const [transactions, setTransactions] = useState([]);
+  const dispatch = useDispatch();
+  const transactionList = useSelector((state) => state.transactionList);
+  const { loading, error, transactions } = transactionList;
 
   useEffect(() => {
-    const fetchTransactions = async () => {
-      const { data } = await axios.get("/api/transactions");
-      setTransactions(data);
-    };
-
-    fetchTransactions();
-  }, []);
+    dispatch(listTransactions());
+  }, [dispatch]);
 
   const addDecimals = (num) => {
     return (Math.round(num * 100) / 100).toFixed(2);
@@ -52,50 +50,61 @@ const TransactionList = () => {
           </Link>
         </Col>
       </Row>
-      <Row className="align-items-center m-4">
-        <Table stripped bordered hover responsive className="table-sm">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Date</th>
-              <th>Qty</th>
-              <th>Category</th>
-              <th>Transaction Description</th>
-              <th>Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            {transactions.map((transaction) => (
-              <tr key={transaction._id}>
-                <td>{transaction._id}</td>
-                <td>-</td>
-                <td>{transaction.qty}</td>
-                <td>{transaction.category}</td>
-                <td>{transaction.description}</td>
-                <td>R {addDecimals(transaction.lineTotal)}</td>
-                <td>
-                  <LinkContainer to={`/transactions/${transaction._id}`}>
-                    <Button className="btn-sm" varaint="light">
-                      Details
-                    </Button>
-                  </LinkContainer>
-                </td>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <h2>{error}</h2>
+      ) : (
+        <Row className="align-items-center m-4">
+          <Table stripped bordered hover responsive className="table-sm">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Qty</th>
+                <th>Category</th>
+                <th>Transaction Description</th>
+                <th>Amount</th>
               </tr>
-            ))}
-            <tr>
-              <td colSpan="5">Total </td>
-              <td colSpan="2">R {calculate()}</td>
-            </tr>
-          </tbody>
-        </Table>
-      </Row>
-      <Row className="m-4">
-        <Col>
-          <Button className="btn-sm" varaint="light">
-            Print Transactions
-          </Button>
-        </Col>
-      </Row>
+            </thead>
+            <tbody>
+              {transactions &&
+                transactions.map((transaction) => (
+                  <tr key={transaction._id}>
+                    <td>{transaction._id}</td>
+                    <td>-</td>
+                    <td>{transaction.qty}</td>
+                    <td>{transaction.category}</td>
+                    <td>{transaction.description}</td>
+                    <td>R {addDecimals(transaction.lineTotal)}</td>
+                    <td>
+                      <LinkContainer to={`/transactions/${transaction._id}`}>
+                        <Button className="btn-sm" varaint="light">
+                          Details
+                        </Button>
+                      </LinkContainer>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+            <tfoot>
+              {transactions ? (
+                <tr>
+                  <td colSpan="5">Total </td>
+                  <td colSpan="2">R {calculate()}</td>
+                </tr>
+              ) : null}
+            </tfoot>
+          </Table>
+          <Row className="m-4">
+            <Col>
+              <Button className="btn-sm" varaint="light">
+                Print Transactions
+              </Button>
+            </Col>
+          </Row>
+        </Row>
+      )}
     </>
   );
 };
