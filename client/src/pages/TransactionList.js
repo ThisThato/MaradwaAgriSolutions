@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Table, Row, Col, Button, ProgressBar, Spinner } from "react-bootstrap";
+import { Table, Row, Col, Button, ProgressBar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
 import { listTransactions } from "../actions/transactionActions";
@@ -56,7 +56,7 @@ const TransactionList = () => {
         <h2>{error}</h2>
       ) : (
         <Row className="align-items-center m-4">
-          <Table stripped bordered hover responsive className="table-sm">
+          <Table stripped="true" bordered hover responsive className="table-sm">
             <thead>
               <tr>
                 <th>ID</th>
