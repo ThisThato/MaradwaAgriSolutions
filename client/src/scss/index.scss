@@ -8,7 +8,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 a {
@@ -28,13 +28,13 @@ li {
   margin: 10px 20px;
   display: inline-block;
   position: relative;
-  opacity: 0.75;
+  opacity: 1;
 }
 
-.nav-link:hover {
-  opacity: 5;
-  color: $primary-color;
-}
+// .nav-link:hover {
+//   opacity: 5;
+//   color: $primary-color;
+// }
 
 .nav-link::before {
   transition: 300ms;

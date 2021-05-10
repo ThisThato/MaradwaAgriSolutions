@@ -7,7 +7,7 @@ const ProductCarousel = () => {
     <Carousel pause="hover" className="bg-light landing">
       <Carousel.Item>
         <Link>
-          <Image src="./images/farm3.jpg" fluid className="d-block w-100"></Image>
+          <Image src="./images/chicken2.jpg" fluid className="d-block w-100"></Image>
           <Carousel.Caption className="carousel.caption">
             <h1>LiveStock Solutions</h1>
             <p>High-performing products that keep large turf areas beautiful and healthy-while saving you time, water and energy.</p>
@@ -16,7 +16,7 @@ const ProductCarousel = () => {
       </Carousel.Item>
       <Carousel.Item>
         <Link>
-          <Image src="./images/farmer2.jpg" fluid className="d-block w-100"></Image>
+          <Image src="./images/expert2.jpg" fluid className="d-block w-100"></Image>
           <Carousel.Caption className="carousel.caption">
             <h1>Farming Solutions</h1>
             <p>High-performing products that keep large turf areas beautiful and healthy-while saving you time, water and energy.</p>

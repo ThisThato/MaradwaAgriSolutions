@@ -5,6 +5,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
 import { listTransactions } from "../actions/transactionActions";
 import Loader from "../components/Loader";
+import generatePDF from "../services/generatePDF";
 
 const TransactionList = () => {
   const dispatch = useDispatch();
@@ -98,7 +99,7 @@ const TransactionList = () => {
           </Table>
           <Row className="m-4">
             <Col>
-              <Button className="btn-sm" varaint="light">
+              <Button className="btn-sm" varaint="light" onClick={() => generatePDF(transactions)}>
                 Print Transactions
               </Button>
             </Col>

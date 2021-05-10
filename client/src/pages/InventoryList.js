@@ -37,7 +37,6 @@ const InventoryList = () => {
                 <td>-</td>
                 <td>-</td>
                 <td>-</td>
-                <td>-</td>
                 <td>
                   <LinkContainer to="">
                     <Button className="btn-sm" varaint="light">

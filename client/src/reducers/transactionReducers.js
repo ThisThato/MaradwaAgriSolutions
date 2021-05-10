@@ -1,4 +1,11 @@
-import { TRANSACTION_LIST_REQUEST, TRANSACTION_LIST_SUCCESS, TRANSACTION_LIST_FAIL } from "../constants/transactionConstants";
+import {
+  TRANSACTION_LIST_REQUEST,
+  TRANSACTION_LIST_SUCCESS,
+  TRANSACTION_LIST_FAIL,
+  TRANSACTION_DETAILS_REQUEST,
+  TRANSACTION_DETAILS_SUCCESS,
+  TRANSACTION_DETAILS_FAIL,
+} from "../constants/transactionConstants";
 
 export const transactionListReducer = (state = { transactions: [] }, action) => {
   switch (action.type) {
@@ -11,5 +18,18 @@ export const transactionListReducer = (state = { transactions: [] }, action) => 
 
     default:
       return { state };
+  }
+};
+
+export const transactionDetailsReducer = (state = { transaction: {} }, action) => {
+  switch (action.type) {
+    case TRANSACTION_DETAILS_REQUEST:
+      return { loading: true, ...state };
+    case TRANSACTION_DETAILS_SUCCESS:
+      return { loading: false, transaction: action.payload };
+    case TRANSACTION_DETAILS_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
   }
 };
